@@ -23,7 +23,9 @@ const Tempo = () => {
         fetch("/api/weather?address=" + search)
             .then(res => res.json())
             .then(res => {
-                setTempo(res)
+                if(!res.error){
+                    setTempo(res)
+                }
                 setLoading(false)
             })
     }
