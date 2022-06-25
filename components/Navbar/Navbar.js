@@ -16,6 +16,9 @@ const Navbar = () => {
                 <li>
                     <Link href="/experiencia">Experiência</Link>
                 </li>
+                <li>
+                    <Link href="/tempo">Tempo</Link>
+                </li>
             </ul>
         </nav>
     )

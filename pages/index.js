@@ -10,7 +10,7 @@ export default function Home() {
 				<title>Gabriel Lobo</title>
 			</Head>
 			<h1>Olá.</h1>
-			<p>Eu sou Gabriel Lobo - estudante de engenharia elétrica
+			<p>Sou Gabriel Lobo - estudante de engenharia elétrica
 				atualmente trabalhando como desenvolvedor na <a href="https://norus.com.br">Norus </a>
 				em Florianópolis.
 			</p>
