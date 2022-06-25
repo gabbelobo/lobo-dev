@@ -15,6 +15,13 @@ h5 {
 	color: black;
 }
 
+hr {
+	display: block; 
+	height: 1px;
+    border: 0; 
+	border-top: 1px solid colors.$lightgray;
+}
+
 a {
 	color: colors.$blue;
 	text-decoration: none;
@@ -48,5 +55,8 @@ a:hover {
 		background-color: colors.$darkergray;
 		color: colors.$lightgray;
 		font-weight: 400;
+	}
+	hr {
+		border-color: colors.$darkgray;
 	}
 }

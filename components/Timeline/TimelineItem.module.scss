@@ -1,0 +1,71 @@
+@use "../../styles/colors";
+
+.item {
+    display: flex;
+    position: relative;
+}
+.item:last-child::before {
+    display: none;
+}
+.item::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: colors.$lightgray;
+    left: calc(1rem + 0.75rem);
+    top: 1rem;
+}
+
+.circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 1rem;
+    background-color: colors.$blue;
+    border-radius: 50%;
+    z-index: 1;
+}
+.content {
+    flex: 1;
+    margin-bottom: 2rem;
+    .card {
+        
+        border: 1px solid colors.$lightgray;
+        border-radius: 5px;
+        padding: 1rem;
+        
+        h2 {
+            margin: 0.2rem 0;
+        }
+        p {
+            margin: 0.1rem 0;
+            color: colors.$gray;
+        }
+
+        .company {
+            color: colors.$darkgray;
+            font-weight: 500;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .item::before {
+        background-color: colors.$darkgray;
+    }
+    .content {
+        .card {
+            
+            border: 1px solid colors.$darkgray;
+            
+            p {
+                margin: 0.1rem 0;
+                color: colors.$gray;
+            }
+    
+            .company {
+                color: colors.$lightgray;
+            }
+        }
+    }
+}

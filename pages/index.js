@@ -27,7 +27,7 @@ export default function Home() {
 				sistema numérico de previsões atmosféricas
 				<a href="https://www.mmm.ucar.edu/weather-research-and-forecasting-model"> WRF </a>
 				para fazer a análise de sensibilidade para previsão de
-				geração eólica. Também estou escrevendo meu TCC com este tema.
+				geração eólica. Também estou escrevendo meu TCC nesse mesmo tema.
 			</p>
 			<div className={styles.socials}>
 				<a href="https://www.linkedin.com/in/gabbelobo/">

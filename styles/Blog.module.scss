@@ -1,0 +1,24 @@
+@use "../styles/colors";
+
+.article_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .item {
+        p {
+            color: colors.$darkgray;
+        }
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .article_list {
+
+        .item {
+            p {
+                color: colors.$lightgray;
+            }
+        }
+    }
+}
