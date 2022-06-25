@@ -1,0 +1,23 @@
+@use "./colors";
+
+.socials {
+	display: flex;
+	gap: 0.5rem;
+	padding: 0.75rem 0;
+	a {
+		color: colors.$darkgray;
+	}
+	a:hover {
+		color: colors.$gray;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	.socials {
+		a {
+			color: colors.$lightgray;
+		}
+		a:hover {
+			color: white;
+		}
+	}
+}

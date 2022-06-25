@@ -1,0 +1,52 @@
+@use "./colors";
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "IBM Plex Sans", sans-serif;
+	color: colors.$darkgray;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: black;
+}
+
+a {
+	color: colors.$blue;
+	text-decoration: none;
+}
+a:hover {
+	color: colors.$bluelight;
+	text-decoration: underline;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+	a {
+		color: colors.$bluelight;
+		text-decoration: none;
+	}
+	a:hover {
+		color: colors.$blue;
+		text-decoration: underline;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		color: white;
+	}
+	body {
+		background-color: colors.$darkergray;
+		color: colors.$lightgray;
+		font-weight: 400;
+	}
+}

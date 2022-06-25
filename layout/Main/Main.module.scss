@@ -1,0 +1,27 @@
+@use '../../styles/colors';
+
+.wrapper {
+    margin: auto;
+    min-height: 100vh;
+    max-width: 1000px;
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    main {
+        padding: 1rem 0;
+        flex: 1;
+    }
+}
+
+.footer {
+    padding: 1rem 0;
+    color: #5f6c80;
+    border-top: 1px solid #cbd5e0;
+    text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+	.footer {
+        border-color: colors.$darkgray;
+    }
+}
