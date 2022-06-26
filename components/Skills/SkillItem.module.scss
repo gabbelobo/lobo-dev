@@ -1,0 +1,14 @@
+.item {
+    margin: 1rem 0;
+    display: flex;
+    gap: 1rem;
+    .image {
+        width: 40px;
+    }
+    .content {
+        flex: 1;
+    }
+    h4,p {
+        margin: 0;
+    }
+}
