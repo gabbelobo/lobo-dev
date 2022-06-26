@@ -22,6 +22,7 @@ const Experiencia = () => {
                         type={"Estágio"}
                         dateStart={new Date(2021, 9, 1)}
                         location={"Florianópolis, SC - Brasil"}
+                        tags={["C#", "ASP.NET", "MySQL"]}
                     />
                     <TimelineItem
                         title={"Desenvolvedor Fullstack / TI"}
@@ -30,6 +31,7 @@ const Experiencia = () => {
                         dateStart={new Date(2020, 10, 1)}
                         dateEnd={new Date(2021, 9, 2)}
                         location={"Florianópolis, SC - Brasil"}
+                        tags={["PHP", "MySQL", "React", "Node", "MongoDB"]}
                     />
                     <TimelineItem
                         title={"Bolsista de iniciação científica"}
@@ -38,6 +40,7 @@ const Experiencia = () => {
                         dateStart={new Date(2019, 1, 1)}
                         dateEnd={new Date(2020, 1, 2)}
                         location={"Florianópolis, SC - Brasil"}
+                        tags={["Python", "Matlab", "WRF"]}
                     />
                 </Timeline>
                 <Skills>

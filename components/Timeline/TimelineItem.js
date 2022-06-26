@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import styles from './TimelineItem.module.scss'
-const TimelineItem = ({ title, company, location, type, dateStart, dateEnd }) => {
+const TimelineItem = ({ title, company, location, type, dateStart, dateEnd, tags }) => {
     const countMonths = (start,end) => {
         const momentStart = moment(start)
         const momentEnd = moment(end || new Date())
@@ -31,6 +31,15 @@ const TimelineItem = ({ title, company, location, type, dateStart, dateEnd }) =>
                     <p className={styles.company}>{company} · {type}</p>
                     <p>{moment(dateStart).format('MM/YYYY')} - {dateEnd ? moment(dateEnd).format('MM/YYYY') : 'momento'} · {countMonths(dateStart,dateEnd)}</p>
                     <p>{location}</p>
+                    <div className={styles.tags}>
+                        {
+                            tags.map(tag => (
+                                <div key={tag} className={styles.tag}>
+                                    {tag}
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
 

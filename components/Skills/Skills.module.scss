@@ -1,4 +1,10 @@
 .skills {
     padding: 0 1rem;
-    width: 400px;
+    width: 45%;
+}
+
+@media screen and (max-width: 768px) {
+    .skills {
+        width: 100%;
+    }
 }

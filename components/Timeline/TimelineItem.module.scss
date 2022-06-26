@@ -29,11 +29,10 @@
     flex: 1;
     margin-bottom: 2rem;
     .card {
-        
         border: 1px solid colors.$lightgray;
         border-radius: 5px;
         padding: 1rem;
-        
+
         h2 {
             margin: 0.2rem 0;
         }
@@ -46,6 +45,18 @@
             color: colors.$darkgray;
             font-weight: 500;
         }
+
+        .tags {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            .tag {
+                padding: 0.5rem;
+                background-color: colors.$lightgray;
+                border-radius: 12.5px;
+                font-size: 0.8rem;
+            }
+        }
     }
 }
 
@@ -55,16 +66,22 @@
     }
     .content {
         .card {
-            
             border: 1px solid colors.$darkgray;
-            
+
             p {
                 margin: 0.1rem 0;
                 color: colors.$gray;
             }
-    
+
             .company {
                 color: colors.$lightgray;
+            }
+
+            .tags {
+                .tag {
+                    border: 1px solid colors.$gray;
+                    background-color: transparent;
+                }
             }
         }
     }

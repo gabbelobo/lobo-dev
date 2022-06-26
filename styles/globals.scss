@@ -16,9 +16,9 @@ h5 {
 }
 
 hr {
-	display: block; 
+	display: block;
 	height: 1px;
-    border: 0; 
+	border: 0;
 	border-top: 1px solid colors.$lightgray;
 }
 
@@ -35,6 +35,26 @@ a:hover {
 	box-sizing: border-box;
 }
 
+p {
+	line-height: 1.5rem;
+	code {
+		background-color: colors.$lightgray;
+		padding: 0.15rem;
+		border-radius: 5px;
+		font-size: 0.9rem;
+	}
+}
+
+pre {
+	background-color: colors.$lightgray;
+	padding: 0.5rem;
+	border-radius: 5px;
+	font-size: 0.9rem;
+	line-height: 1.2rem;
+	// white-space: pre-line;
+	white-space: pre-wrap;    
+	word-wrap: break-word; 
+}
 @media (prefers-color-scheme: dark) {
 	a {
 		color: colors.$bluelight;
@@ -58,5 +78,16 @@ a:hover {
 	}
 	hr {
 		border-color: colors.$darkgray;
+	}
+	p {
+		code {
+			background-color: colors.$darkgray;
+			padding: 0.15rem;
+			border-radius: 5px;
+		}
+	}
+
+	pre {
+		background-color: colors.$darkgray;
 	}
 }
