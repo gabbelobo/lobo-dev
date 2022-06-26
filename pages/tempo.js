@@ -35,6 +35,9 @@ const Tempo = () => {
                 <title>Tempo - Gabriel Lobo</title>
             </Head>
             <h1>Tempo</h1>
+            <p>Veja o clima atual de qualquer cidade pesquisando 
+                pelo nome abaixo.
+            </p>
             <div className={styles.wrapper}>
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <input
@@ -42,7 +45,7 @@ const Tempo = () => {
                         value={search}
                         onChange={e => setSearch(e.target.value)}
                         className={styles.input}
-                        placeholder="Pesquisar..."
+                        placeholder="Pesquisar cidade..."
                     />
 
                 </form>
