@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import Analytics from '../components/Analytics'
 
 export default function Document() {
     return (
@@ -19,9 +18,9 @@ export default function Document() {
                 <meta name="twitter:description" content="Site pessoal de Gabriel Löfgren Lobo" />
                 {/* <meta name="twitter:url" content="https://your-website.com/twitter-image.png"> */}
                 <meta name="twitter:card" content="summary"></meta>
-				<link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.ico" />
                 <link rel="apple-touch-icon" href="/apple-touch-icon.png"></link>
-                <Analytics />
+                
             </Head>
             <body>
                 <Main />
