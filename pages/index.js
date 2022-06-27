@@ -30,16 +30,16 @@ export default function Home() {
 				geração eólica. Também estou escrevendo meu TCC nesse mesmo tema.
 			</p>
 			<div className={styles.socials}>
-				<a href="https://www.linkedin.com/in/gabbelobo/">
+				<a href="https://www.linkedin.com/in/gabbelobo/" aria-label='Gabriels linkedin page'>
 					<FaLinkedin size={'2rem'} />
 				</a>
-				<a href="https://github.com/gabbelobo">
+				<a href="https://github.com/gabbelobo" aria-label='Gabriels github page'>
 					<FaGithub size={'2rem'} />
 				</a>
-				<a href="https://www.instagram.com/gabbelobo/">
+				<a href="https://www.instagram.com/gabbelobo/" aria-label='Gabriels instagram page'>
 					<FaInstagram size={'2rem'} />
 				</a>
-				<a href="mailto:lofgrenlobo@gmail.com">
+				<a href="mailto:lofgrenlobo@gmail.com"  aria-label='Email to Gabriel'>
 					<MdMail size={'2rem'}/>
 				</a>
 			</div>
