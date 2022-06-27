@@ -5,13 +5,15 @@ import styles from '../Navbar/Navbar.module.scss'
 const Navbar = () => {
     return (
         <nav className={styles.navbar}>
-            <h1>Gabriel Lobo</h1>
+            <Link href={"/"}>
+                <h1>Gabriel Lobo</h1>
+            </Link>
             <ul>
                 <li>
-                    <Link href="/blog">Blog</Link>
+                    <Link href="/">Sobre</Link>
                 </li>
                 <li>
-                    <Link href="/">Sobre</Link>
+                    <Link href="/blog">Blog</Link>
                 </li>
                 <li>
                     <Link href="/experiencia">Experiência</Link>

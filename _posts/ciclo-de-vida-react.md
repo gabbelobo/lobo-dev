@@ -10,26 +10,30 @@ ogImage:
   url: '/assets/blog/hello-world/cover.jpg'
 ---
 
-Cada componente React possui um fluxo de ações que podem ser monitoradas e manipuladas, esse fluxo é chamado de "Lifecycle" ou "Ciclo de vida". Para poder otimizar seu código, ou até mesmo evitar falhas graves como loops infinitos, é de extrema importância o desenvolvedor entender como que o ciclo funciona e também como utilizá-lo ao seu favor. Nesse artigo vamos explorar o que cada ciclo executa e também mostrar exemplos práticos de cada um.
+Cada componente React possui um fluxo de ações, seja na sua criação ou atualização, que podem ser monitoradas e manipuladas, esse fluxo é chamado de "Lifecycle" ou "Ciclo de vida". Para poder otimizar seu código, ou até mesmo evitar falhas graves como loops infinitos, é de extrema importância para o desenvolvedor entender como que o ciclo funciona e também como utilizá-lo ao seu favor. Nesse artigo vamos explorar o que cada ciclo executa e também mostrar exemplos práticos de cada um.
 
 ## 1. Fases do ciclo
 
-O ciclo de vida possúi 3 fases: **Mounting**, **Updating** e **Unmounting**.
+O ciclo de vida possúi 3 fases: **Mounting**, **Updating** e **Unmounting**. Cada uma dessas fases possui alguns métodos incorporados que são chamados durante a execução. Nesse artigo vamos focar apenas nos seguintes métodos que são executados no fim de cada fase:
+
+- `componentDidMount()`
+- `componentDidUpdate()`
+- `componentWillUnmount()` 
 
 ### Mounting
 
-Representa a etapa inicial de um componente, nessa etapa o componente lê o state e as props passadas para montar os elementos na DOM. Após completar a montagem, executa o método `componentDidMount()`; com ele, podemos executar funções assim que o componente é inicializado.
+Representa a etapa de inicialização de um componente. Nessa etapa, o componente lê o state e as props passadas para ele e monta os elementos na DOM. Após completar a montagem, o método `componentDidMount()` é executado. Este método pode ser utilizado para executar funções assim que o componente é inicializado.
 
 ### Updating
 
 A próxima fase no ciclo de vida é quando um componente é atualizado.
 Um componente é atualizado sempre que há uma mudança no **state** ou nas **props** do componente.
-É muito importante para o desenvolvedor entender as condições de atualização, já que (caso não tratado) **todos** os métodos do componente e de seus filhos vão ser executados **toda** vez que qualquer **state** ou **prop** é modificado, podendo causar problemas sérios de performance na aplicação. 
-Assim que o componente finalizar o estado de **Updating**, irá executar o método `componentDidUpdate()`.
+É muito importante entender as condições de atualização, já que (caso não tratado) **todos** os métodos do componente e de seus filhos vão ser executados **toda** vez que qualquer **state** ou **prop** é modificado, podendo causar sérios problemas na performance da aplicação. 
+Assim que o componente finalizar a fase de **Updating**, ele executa o método `componentDidUpdate()`.
 
 ### Unmounting
 
-A próxima fase no ciclo de vida é quando um componente é removido do DOM. Ela é relativamente simples e serve mais para controle do desenvolvedor. O método `componentWillUnmount()` é chamado quando o componente está prestes a ser removido do DOM. Uma aplicação muito comum é utilizar o `componentWillUnmount()` para remover qualquer `EventListener` que um componente esteja utilizando, visando a performance da aplicação.
+A próxima fase no ciclo de vida é quando um componente é removido do DOM. Ela é relativamente simples, mas pode ser extremamente útil para o desenvolvedor. Uma aplicação muito comum é utilizar essa fase para remover qualquer `EventListener` que um componente esteja utilizando, visando a otimização da aplicação. O método `componentWillUnmount()` é chamado quando o componente está prestes a ser removido do DOM. 
 
 ## 2. Aplicações
 
@@ -63,7 +67,11 @@ const Componente = () => {
     })
 
     return (
-        <button onClick={() => setContador(current => current + 1)}>Acrescentar</button>
+        <button 
+            onClick={() => setContador(current => current + 1)}
+        >
+            Acrescentar
+        </button>
     )
 }
 ```
@@ -98,7 +106,11 @@ const Componente = () => {
     return (
         <div>
             <p>{fato}</p>
-            <button onClick={() => setContador(current => current + 1)}>Acrescentar: {contador}</button>
+            <button 
+                onClick={() => setContador(current => current + 1)}
+            >
+                Acrescentar: {contador}
+            </button>
         </div>
     )
 }
@@ -120,25 +132,64 @@ No código abaixo, temos 3 states, `nome`, `num` e `contador`.
 `contador` é o mesmo contador que viemos usando nos últimos códigos.
 
 ```jsx
-const [nome, setNome] = useState("")
-const [num, setNum] = useState(0)
-const [contador, setContador] = useState(0)
+import React, { useEffect, useState } from 'react'
 
-useEffect(() => {
-    console.log("Contando letras");
-    setNum(nome.length)
-}, [nome])
+const Componente = () => {
+    const [nome, setNome] = useState("")
+    const [num, setNum] = useState(0)
+    const [contador, setContador] = useState(0)
 
-return (
-    <div>
-        <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
-        <p>Número de letras no nome: {num}</p>
-        <button onClick={() => setContador(current => current + 1)}>Acrescentar: {contador}</button>
-    </div>
-)
+    useEffect(() => {
+        console.log("Contando letras");
+        setNum(nome.length)
+    }, [nome])
+
+    return (
+        <div>
+            <input type="text" value={nome} onChange={e => setNome(e.target.value)} />
+            <p>Número de letras no nome: {num}</p>
+            <button 
+                onClick={() => setContador(current => current + 1)}
+            >
+                Acrescentar: {contador}
+            </button>
+        </div>
+    )
+}
 ```
 
 Podemos observar pelo console que a mensagem "Contando letras" apenas aparece quando alteramos o valor do `input`, clicar no `button` e alterando o valor de `contador` não tem impacto nenhum no nosso `useEffect`.
+
+### 4. Efeito de cleanup
+
+Como dito anteriormente, podemos retornar uma função no hook `useEffect` que será executada no método `componentWillUnmount()`, ou seja, quando o componente for removido. Esta função é geralmente chamada de função de "cleanup" ou "limpeza".
+
+No código a seguir, nós adicionamos um `EventListener` do `contextmenu` (botão direito na página) quando o nosso componente é criado e o removemos quando o componente é destruído.
+
+```jsx
+import React, { useEffect, useState } from 'react'
+
+const Componente = () => {
+    const handleContextMenu = () => {
+        console.log('O menu de contexto foi aberto');
+    };
+
+    useEffect(() => {
+        window.addEventListener('contextmenu', handleContextMenu);
+
+        // cleanup
+        return () => {
+            window.removeEventListener('contextmenu', handleContextMenu);
+        };
+    }, []);
+
+    return (
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        </div>
+    )
+}
+```
 
 ## 3. Conclusão
 
@@ -148,4 +199,4 @@ Descrevemos o ciclo de vida de um componente de React em 3 etapas: **Mounting**,
 - **Updating** é executado ao atualizar um componente.
 - **Unmounting** é executado ao remover um componente.
 
-Podemos utilizar essas etapas ao nosso favor através do hook `useEffect`, modificando seu comportamento através de uma array de dependências.
+Podemos utilizar os métodos que são chamados no fim dessas etapas ao nosso favor através do hook `useEffect`, onde seu comportamento pode ser modificado através de uma array de dependências.
