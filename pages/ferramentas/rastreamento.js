@@ -9,7 +9,7 @@ import Previsao from '../../components/Correios/Previsao'
 import ReactLoading from 'react-loading'
 const Rastreamento = () => {
     const [dark, setDark] = useState(false)
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const [code, setCode] = useState("")
     const [rastreamento, setRastreamento] = useState({})
 
