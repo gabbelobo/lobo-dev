@@ -20,11 +20,6 @@
 }
 .dropdown:hover {
     color: black;
-    .menu {
-        a {
-            color: black;
-        }
-    }
 }
 .menu.show {
     display: block;
@@ -48,6 +43,10 @@
     a {
         padding: 0.25rem 1rem;
         width: 100%;
+        display: block;
+    }
+    a:hover {
+        background-color: colors.$darkgray;
     }
 }
 
@@ -57,11 +56,6 @@
 
         button {
             color: white;
-        }
-        .menu {
-            a {
-                color: white;
-            }
         }
     }
     .menu {
