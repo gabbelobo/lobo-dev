@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
-import Main from '../layout/Main'
+import Main from '../../layout/Main'
 import moment from 'moment'
 import 'moment/locale/pt-br'
-import styles from '../styles/Tempo.module.scss'
+import styles from '../../styles/Tempo.module.scss'
 import ReactLoading from 'react-loading'
 
 const Tempo = () => {

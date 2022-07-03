@@ -1,0 +1,71 @@
+@use "../../styles/colors";
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+    button {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        color: colors.$gray;
+        padding: 0;
+    }
+    button:hover {
+        color: black;
+        text-decoration: underline;
+    }
+}
+.dropdown:hover {
+    color: black;
+    .menu {
+        a {
+            color: black;
+        }
+    }
+}
+.menu.show {
+    display: block;
+}
+.menu {
+    top: 120%;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: 0.5rem 0;
+    margin: 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid colors.$gray;
+    border-radius: 0.25rem;
+    a {
+        padding: 0.25rem 1rem;
+        width: 100%;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .dropdown:hover {
+        color: white;
+
+        button {
+            color: white;
+        }
+        .menu {
+            a {
+                color: white;
+            }
+        }
+    }
+    .menu {
+        border-color: colors.$darkgray;
+        background-color: colors.$darkergray;
+    }
+}

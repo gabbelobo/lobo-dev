@@ -7,14 +7,16 @@
         margin: 0;
         cursor: pointer;
     }
-    ul {
+    > ul {
         padding: 1rem 0;
         list-style: none;
         margin: 0;
         display: flex;
 
-        li {
+        > li {
             margin: 0 0.5rem;
+            display: grid;
+            place-items: center;
             a {
                 color: colors.$gray;
             }

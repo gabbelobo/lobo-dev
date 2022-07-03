@@ -35,10 +35,4 @@
     display: flex;
     justify-content: center;
 }
-@media (prefers-color-scheme: dark) {
-    .form {
-        .input {
-            color: colors.$lightgray;
-        }
-    }
-}
+
