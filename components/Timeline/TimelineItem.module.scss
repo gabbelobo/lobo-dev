@@ -1,5 +1,7 @@
 @use "../../styles/colors";
 
+$circle-width: 1.5rem;
+
 .item {
     display: flex;
     position: relative;
@@ -13,14 +15,14 @@
     height: 100%;
     width: 1px;
     background-color: colors.$lightgray;
-    left: calc(1rem + 0.25rem);
+    left: 0.75rem;
     top: 1rem;
 }
 
 .circle {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: 0.5rem;
+    width: $circle-width;
+    height: $circle-width;
+    margin: 0.5rem 0.5rem 0.5rem 0;
     background-color: colors.$blue;
     border-radius: 50%;
     z-index: 1;
