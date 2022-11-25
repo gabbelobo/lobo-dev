@@ -44,9 +44,11 @@
         padding: 0.25rem 1rem;
         width: 100%;
         display: block;
+        color: colors.$gray;
     }
     a:hover {
         background-color: colors.$darkgray;
+        color: white;
     }
 }
 

@@ -17,10 +17,10 @@
             margin: 0 0.5rem;
             display: grid;
             place-items: center;
-            a {
+            > a {
                 color: colors.$gray;
             }
-            a:hover { 
+            > a:hover { 
                 color: black;
             }
         }

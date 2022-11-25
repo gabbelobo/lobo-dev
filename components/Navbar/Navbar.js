@@ -25,9 +25,9 @@ const Navbar = () => {
                         <DropdownItem>
                             <Link href="/ferramentas/tempo">Tempo</Link>
                         </DropdownItem>
-                        <DropdownItem>
+                        {/* <DropdownItem>
                             <Link href="/ferramentas/rastreamento">Rastreamento</Link>
-                        </DropdownItem>
+                        </DropdownItem> */}
                     </Dropdown>
                 </li>
             </ul>
