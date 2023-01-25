@@ -15,8 +15,8 @@ export default function Home() {
 			<p>Bem-vindo ao site do meu portfólio pessoal!</p>
 			<p> Meu nome é Gabriel Lobo e sou engenheiro eletricista 
 				com experiência em desenvolvimento de software. Tenho paixão por criar tecnologias inovadoras e 
-				trabalho como desenvolvedor de software há {moment().diff(moment([2019,1,1]), 'years')} anos. 
-				Tenho experiência em várias linguagens de programação, como JavaScript, Python e C# e atualmente 
+				atualmente trabalho como desenvolvedor de software há {moment().diff(moment([2019,1,1]), 'years')} 
+				anos. Tenho experiência em várias linguagens de programação, como JavaScript, Python e C# e atualmente 
 				trabalho como desenvolvedor na <a href="https://norus.com.br">Norus </a>
 				em Florianópolis. Também tive a oportunidade de trabalhar com previsão de energia eólica no 
 				laboratório <a href='https://www.lepten.ufsc.br/'> LEPTEN/Boiling </a> na <a href='https://ufsc.br/'>UFSC</a>.
