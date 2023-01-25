@@ -14,12 +14,12 @@ export default function Home() {
 			<h1>Olá.</h1>
 			<p>Bem-vindo ao site do meu portfólio pessoal!</p>
 			<p> Meu nome é Gabriel Lobo e sou engenheiro eletricista 
-				com experiência em desenvolvimento de software. Tenho paixão por criar tecnologias inovadoras e 
-				 trabalho como desenvolvedor de software há {moment().diff(moment([2019,1,1]), 'years')} anos. 
+				com experiência em desenvolvimento de software. Tenho paixão por tecnologia e programação e 
+				trabalho como desenvolvedor de software há {moment().diff(moment([2019,1,1]), 'years') + 1} anos. 
 				Tenho experiência em várias linguagens de programação, como JavaScript, Python e C# e atualmente 
-				trabalho como desenvolvedor na <a href="https://norus.com.br">Norus </a>
-				em Florianópolis. Também tive a oportunidade de trabalhar com previsão de energia eólica no 
-				laboratório <a href='https://www.lepten.ufsc.br/'> LEPTEN/Boiling </a> na <a href='https://ufsc.br/'>UFSC</a>.
+				trabalho como desenvolvedor na <a href="https://norus.com.br">Norus </a> em Florianópolis. 
+				Também tive a oportunidade de trabalhar com previsão de energia eólica no laboratório 
+				<a href='https://www.lepten.ufsc.br/'> LEPTEN/Boiling </a> na <a href='https://ufsc.br/'>UFSC</a>.
 			</p>
 			<p>Neste site, você encontrará uma <a href='/portfolio'> coletânea do meu trabalho </a>
 				 e da minha <Link href={'/experiencia'}>experiência profissional</Link>. 
