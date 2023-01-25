@@ -21,7 +21,7 @@ const ExperienciaPage = () => {
                         <Experiencia
                             title={"Desenvolvedor Fullstack"}
                             company={"Norus"}
-                            type={"Estágio"}
+                            type={"Tempo integral"}
                             dateStart={new Date(2021, 9, 1)}
                             location={"Florianópolis, SC - Brasil"}
                             tags={["C#", "ASP.NET", "MySQL"]}
